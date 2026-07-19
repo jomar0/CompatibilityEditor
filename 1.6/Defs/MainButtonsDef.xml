@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <MainButtonDef>
+        <defName>CompatibilityEditor</defName>
+        <label>Compatibility</label>
+        <description>Open the pawn compatibility editor.</description>
+        <tabWindowClass>CompatibilityEditor.MainTabWindow_CompatibilityEditor</tabWindowClass>
+        <validWithoutMap>false</validWithoutMap>
+        <order>1000</order>
+        <minimized>True</minimized>
+        <iconPath>UI/Icons/CompatibilityEditor</iconPath>
+    </MainButtonDef>
+</Defs>

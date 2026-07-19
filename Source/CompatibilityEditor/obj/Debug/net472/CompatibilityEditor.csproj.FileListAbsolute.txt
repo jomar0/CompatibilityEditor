@@ -1,0 +1,7 @@
+c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\CompatibilityEditor\obj\Debug\net472\CompatibilityEditor.csproj.AssemblyReference.cache
+c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\CompatibilityEditor\obj\Debug\net472\CompatibilityEditor.GeneratedMSBuildEditorConfig.editorconfig
+c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\CompatibilityEditor\obj\Debug\net472\CompatibilityEditor.csproj.CoreCompileInputs.cache
+c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\CompatibilityEditor\bin\Debug\net472\CompatibilityEditor.dll
+c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\CompatibilityEditor\bin\Debug\net472\CompatibilityEditor.pdb
+c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\CompatibilityEditor\obj\Debug\net472\CompatibilityEditor.dll
+c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\CompatibilityEditor\obj\Debug\net472\CompatibilityEditor.pdb

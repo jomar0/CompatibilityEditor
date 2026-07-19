@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <CompatibilityEditor.Title>Pawn Compatibility Editor</CompatibilityEditor.Title>
+    <CompatibilityEditor.Save>Save</CompatibilityEditor.Save>
+    <CompatibilityEditor.Close>Close</CompatibilityEditor.Close>
+    <CompatibilityEditor.Reset>Reset</CompatibilityEditor.Reset>
+
+    <CompatibilityEditor.ResetTip>Revert to the game-generated value.</CompatibilityEditor.ResetTip>
+    <CompatibilityEditor.CloseTip>Close without saving changes.</CompatibilityEditor.CloseTip>
+    <CompatibilityEditor.SaveTip>Save the current compatibility value for this pair.</CompatibilityEditor.SaveTip>
+    <CompatibilityEditor.NoChangesTip>No changes to save.</CompatibilityEditor.NoChangesTip>
+
+    <CompatibilityEditor.SliderMin>Slider Minimum</CompatibilityEditor.SliderMin>
+    <CompatibilityEditor.SliderMax>Slider Maximum</CompatibilityEditor.SliderMax>
+    <CompatibilityEditor.ShowButtonBar>Show button in main button bar</CompatibilityEditor.ShowButtonBar>
+    <CompatibilityEditor.ShowButtonBarTip>Toggle whether the compatibility editor button should be visible in the main button bar.\nThe editor will still be accessible using the developer option</CompatibilityEditor.ShowButtonBarTip>
+    <CompatibilityEditor.ResetDefaults>Reset To Defaults</CompatibilityEditor.ResetDefaults>
+</LanguageData>

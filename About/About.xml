@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Pawn Compatibility Editor</name>
+    <author>Jomar</author>
+    <packageId>jomar.pawncompatibilityeditor</packageId>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <description>Adds a dialog for overriding pawn compatibility values.</description>
+    <modDependencies>
+        <li>
+            <packageId>brrainz.harmony</packageId>
+            <displayName>Harmony</displayName>
+            <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+    <loadAfter>
+        <li>brrainz.harmony</li>
+        <li>ludeon.rimworld</li>
+    </loadAfter>
+</ModMetaData>
