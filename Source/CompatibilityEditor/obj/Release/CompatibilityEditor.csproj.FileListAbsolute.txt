@@ -5,3 +5,4 @@ c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\Compati
 c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\CompatibilityEditor\obj\Release\CompatibilityEditor.csproj.CoreCompileInputs.cache
 c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\CompatibilityEditor\obj\Release\CompatibilityEditor.dll
 c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\CompatibilityEditor\obj\Release\CompatibilityEditor.pdb
+c:\Games\Steam\steamapps\common\RimWorld\Mods\CompatibilityEditor\Source\CompatibilityEditor\obj\Release\CompatibilityEditor.sourcelink.json

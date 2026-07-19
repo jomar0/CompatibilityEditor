@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj": {}
+    "c:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj": {}
   },
   "projects": {
-    "C:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj": {
+    "c:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj",
+        "projectUniqueName": "c:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj",
         "projectName": "CompatibilityEditor",
-        "projectPath": "C:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj",
+        "projectPath": "c:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj",
         "packagesPath": "C:\\Users\\jomar\\.nuget\\packages\\",
-        "outputPath": "C:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\obj\\",
+        "outputPath": "c:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jomar\\AppData\\Roaming\\NuGet\\NuGet.Config",

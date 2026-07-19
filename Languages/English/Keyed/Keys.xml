@@ -15,4 +15,11 @@
     <CompatibilityEditor.ShowButtonBar>Show button in main button bar</CompatibilityEditor.ShowButtonBar>
     <CompatibilityEditor.ShowButtonBarTip>Toggle whether the compatibility editor button should be visible in the main button bar.\nThe editor will still be accessible using the developer option</CompatibilityEditor.ShowButtonBarTip>
     <CompatibilityEditor.ResetDefaults>Reset To Defaults</CompatibilityEditor.ResetDefaults>
+
+    <CompatibilityEditor.FilterColonists>Colonists</CompatibilityEditor.FilterColonists>
+    <CompatibilityEditor.FilterLodgers>Lodgers</CompatibilityEditor.FilterLodgers>
+    <CompatibilityEditor.FilterPrisoners>Prisoners</CompatibilityEditor.FilterPrisoners>
+    <CompatibilityEditor.FilterSlaves>Slaves</CompatibilityEditor.FilterSlaves>
+    <CompatibilityEditor.FilterGuests>Guests</CompatibilityEditor.FilterGuests>
+    <CompatibilityEditor.ThisMapOnly>This map only</CompatibilityEditor.ThisMapOnly>
 </LanguageData>
