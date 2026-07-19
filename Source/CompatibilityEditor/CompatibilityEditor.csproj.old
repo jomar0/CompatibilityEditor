@@ -58,8 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompatibilityOverrideStore.cs" />
-    <Compile Include="CompatiblityEditorMod.cs" />
-    <Compile Include="Dialog_CompatiblityEditor.cs" />
+    <Compile Include="CompatibilityEditorMod.cs" />
+    <Compile Include="Dialog_CompatibilityEditor.cs" />
     <Compile Include="Patch_CompatibilityWith.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

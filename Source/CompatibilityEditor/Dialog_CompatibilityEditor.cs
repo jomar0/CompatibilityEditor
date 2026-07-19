@@ -33,6 +33,18 @@ namespace CompatibilityEditor
         private string textBuffer;
         private bool hasUnsavedChanges;
 
+        private static float RoundTo2Decimals(float value) => Mathf.Round(value * 100f) / 100f;
+
+        private void SetSliderValue(float value, bool markUnsavedChanges)
+        {
+            sliderValue = RoundTo2Decimals(value);
+            textBuffer = sliderValue.ToString("F2");
+            if (markUnsavedChanges)
+            {
+                hasUnsavedChanges = true;
+            }
+        }
+
         public Dialog_CompatibilityEditor() : base()
         {
             List<Pawn> colonists = Find.CurrentMap.mapPawns.FreeColonists;
@@ -55,17 +67,19 @@ namespace CompatibilityEditor
                 textBuffer = "0.00";
                 return;
             }
+
+            float currentCompatibility = pawn1.relations.CompatibilityWith(pawn2);
+            sliderValue = currentCompatibility;
+            vanillaValue = currentCompatibility;
+
             // If there is a compatibility override store, we defer to that value
             if (CompatibilityOverrideStore.Instance != null)
             {
                 if (CompatibilityOverrideStore.Instance.TryGetOverride(pawn1.thingIDNumber, pawn2.thingIDNumber, out float val)) sliderValue = val;
-                else sliderValue = pawn1.relations.CompatibilityWith(pawn2);
                 if (CompatibilityOverrideStore.Instance.TryGetVanilla(pawn1.thingIDNumber, pawn2.thingIDNumber, out float vanillaVal)) vanillaValue = vanillaVal;
-                else vanillaValue = pawn1.relations.CompatibilityWith(pawn2);
             }
 
-
-            sliderValue = Mathf.Round(sliderValue * 100f) / 100f; // make sure the slider value is to 2dp
+            sliderValue = RoundTo2Decimals(sliderValue); // make sure the slider value is to 2dp
             originalValue = sliderValue;
             textBuffer = sliderValue.ToString("F2");
             hasUnsavedChanges = false;
@@ -148,9 +162,7 @@ namespace CompatibilityEditor
                 sliderValue = Widgets.HorizontalSlider(sliderRect, sliderValue, SliderMin, SliderMax);
                 if (!Mathf.Approximately(sliderValue, prevSliderValue))
                 {
-                    sliderValue = Mathf.Round(sliderValue * 100f) / 100f; // round to 2dp
-                    textBuffer = sliderValue.ToString("F2");
-                    hasUnsavedChanges = true;
+                    SetSliderValue(sliderValue, markUnsavedChanges: true);
                 }
 
                 //textbox
@@ -158,8 +170,7 @@ namespace CompatibilityEditor
                 Widgets.TextFieldNumeric(textBoxRect, ref sliderValue, ref textBuffer, SliderMin, SliderMax);
                 if (!Mathf.Approximately(sliderValue, prevTextValue))
                 {
-                    sliderValue = Mathf.Round(sliderValue * 100f) / 100f; // round to 2dp
-                    hasUnsavedChanges = true;
+                    SetSliderValue(sliderValue, markUnsavedChanges: true);
                 }
             }
             else // if the pair is invalid, grey out the slider and textbox and show N/A in the textbox
@@ -193,8 +204,7 @@ namespace CompatibilityEditor
                     {
                         sliderValue = pawn1.relations.CompatibilityWith(pawn2);
                     }
-                    sliderValue = Mathf.Round(sliderValue * 100f) / 100f; // round to 2dp
-                    textBuffer = sliderValue.ToString("F2");
+                    SetSliderValue(sliderValue, markUnsavedChanges: false);
                     hasUnsavedChanges = !Mathf.Approximately(sliderValue, originalValue); // only mark as having unsaved changes if the reset value is different from the original value
 
                 }
