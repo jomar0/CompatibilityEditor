@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj": {}
+    "C:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj": {}
   },
   "projects": {
-    "c:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj": {
+    "C:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj",
+        "projectUniqueName": "C:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj",
         "projectName": "CompatibilityEditor",
-        "projectPath": "c:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj",
+        "projectPath": "C:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\CompatibilityEditor.csproj",
         "packagesPath": "C:\\Users\\jomar\\.nuget\\packages\\",
-        "outputPath": "c:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\obj\\",
+        "outputPath": "C:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\CompatibilityEditor\\Source\\CompatibilityEditor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jomar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,7 +47,7 @@
         "net472": {
           "framework": "net472",
           "targetAlias": "net472",
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\10.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\program files\\dotnet\\sdk\\10.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
