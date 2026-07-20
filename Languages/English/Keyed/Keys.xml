@@ -22,4 +22,32 @@
     <CompatibilityEditor.FilterSlaves>Slaves</CompatibilityEditor.FilterSlaves>
     <CompatibilityEditor.FilterGuests>Guests</CompatibilityEditor.FilterGuests>
     <CompatibilityEditor.ThisMapOnly>This map only</CompatibilityEditor.ThisMapOnly>
+
+    <CompatibilityEditor.RowRevertTip>Revert this pair to its original compatibility. Takes effect when you save.</CompatibilityEditor.RowRevertTip>
+    <CompatibilityEditor.RowRevertStagedTip>Revert this staged change to the saved value.</CompatibilityEditor.RowRevertStagedTip>
+    <CompatibilityEditor.RowClearOverrideTip>Clear the saved override and return to the vanilla value.</CompatibilityEditor.RowClearOverrideTip>
+    <CompatibilityEditor.NoOtherPawns>No other pawns found.</CompatibilityEditor.NoOtherPawns>
+
+    <CompatibilityEditor.BulkRaise>Raise below</CompatibilityEditor.BulkRaise>
+    <CompatibilityEditor.BulkLower>Lower above</CompatibilityEditor.BulkLower>
+    <CompatibilityEditor.BulkSet>Set all</CompatibilityEditor.BulkSet>
+    <CompatibilityEditor.BulkAllBelow>All below</CompatibilityEditor.BulkAllBelow>
+    <CompatibilityEditor.BulkAllAbove>All above</CompatibilityEditor.BulkAllAbove>
+    <CompatibilityEditor.BulkTo>to</CompatibilityEditor.BulkTo>
+    <CompatibilityEditor.BulkRaiseFull>Raise all below X to Y</CompatibilityEditor.BulkRaiseFull>
+    <CompatibilityEditor.BulkLowerFull>Lower all above X to Y</CompatibilityEditor.BulkLowerFull>
+    <CompatibilityEditor.BulkSetFull>Set all to X</CompatibilityEditor.BulkSetFull>
+
+    <CompatibilityEditor.ResetPawn>Reset Pawn</CompatibilityEditor.ResetPawn>
+    <CompatibilityEditor.Discard>Discard Changes</CompatibilityEditor.Discard>
+    <CompatibilityEditor.SaveChanges>Save Changes ({0})</CompatibilityEditor.SaveChanges>
+    <CompatibilityEditor.SaveAndClose>Save and Close</CompatibilityEditor.SaveAndClose>
+    <CompatibilityEditor.ResetAll>Reset All</CompatibilityEditor.ResetAll>
+    <CompatibilityEditor.BulkResetAllConfirm>Remove all {0} compatibility overrides? This cannot be undone.</CompatibilityEditor.BulkResetAllConfirm>
+
+    <CompatibilityEditor.UnsavedPrompt>Save {0} change(s) to {1}?</CompatibilityEditor.UnsavedPrompt>
+    <CompatibilityEditor.PromptSave>Save</CompatibilityEditor.PromptSave>
+    <CompatibilityEditor.PromptDiscard>Discard</CompatibilityEditor.PromptDiscard>
+
+
 </LanguageData>

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Text;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -33,6 +35,9 @@ namespace CompatibilityEditor
             value = 0f;
             return false;
         }
+        public int Count => overrides.Count;
+
+        public void ClearAll() => overrides.Clear();
 
         public bool TryGetVanilla(int idA, int idB, out float value)
         {
@@ -102,6 +107,52 @@ namespace CompatibilityEditor
                 }
 
 
+            }
+        }
+
+        public string DebugDump()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"[CompatibilityEditor] {overrides.Count} override(s):");
+
+            if (overrides.Count == 0) return sb.ToString();
+
+            Dictionary<int, string> names = BuildNameIndex();
+
+            foreach (KeyValuePair<(int, int), (float overrideVal, float vanillaVal)> kvp in overrides)
+            {
+                sb.AppendLine(
+                    $"  {Describe(kvp.Key.Item1, names)} <-> {Describe(kvp.Key.Item2, names)}" +
+                    $"  =  {kvp.Value.overrideVal:F2}   (vanilla {kvp.Value.vanillaVal:F2})");
+            }
+
+            return sb.ToString();
+        }
+
+        private static string Describe(int id, Dictionary<int, string> names)
+        {
+            return names.TryGetValue(id, out string name)
+                ? $"{id} \"{name}\""
+                : $"{id} \"?\"";
+        }
+
+        private static Dictionary<int, string> BuildNameIndex()
+        {
+            Dictionary<int, string> names = new Dictionary<int, string>();
+            if (Current.ProgramState != ProgramState.Playing) return names;
+
+            AddNames(names, PawnsFinder.AllMapsWorldAndTemporary_AliveOrDead);
+            AddNames(names, PawnsFinder.AllCaravansAndTravellingTransporters_AliveOrDead);
+
+            return names;
+        }
+
+        private static void AddNames(Dictionary<int, string> names, List<Pawn> pawns)
+        {
+            foreach (Pawn p in pawns)
+            {
+                if (p == null) continue;
+                names[p.thingIDNumber] = p.LabelShort;
             }
         }
     }
