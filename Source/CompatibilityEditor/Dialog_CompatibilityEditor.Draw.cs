@@ -11,12 +11,14 @@ namespace CompatibilityEditor
         // ── Icons ───────────────────────────────────────────
         private static readonly Texture2D RevertStagedIcon;
         private static readonly Texture2D ClearOverrideIcon;
+        private static readonly Texture2D TitleIcon;
 
         /// <summary>Loads the row action icons once at startup.</summary>
         static Dialog_CompatibilityEditor()
         {
             RevertStagedIcon = ContentFinder<Texture2D>.Get("UI/RevertStaged");
             ClearOverrideIcon = ContentFinder<Texture2D>.Get("UI/ClearOverride");
+            TitleIcon = ContentFinder<Texture2D>.Get("UI/Icons/CompatibilityEditor");
         }
 
         // ── Layout constants ───────────────────────────────
@@ -50,9 +52,17 @@ namespace CompatibilityEditor
         /// <summary>Lays out and draws the header, left panel, centre panel, and button column.</summary>
         public override void DoWindowContents(Rect inRect)
         {
-            Text.Font = GameFont.Medium;
             Rect headerRect = new Rect(inRect.x, inRect.y, inRect.width, HEADER_HEIGHT);
-            Widgets.Label(headerRect, "CompatibilityEditor.Title".Translate());
+
+            float iconSize = HEADER_HEIGHT;
+            Rect iconRect = new Rect(headerRect.x, headerRect.y, iconSize, iconSize);
+            GUI.DrawTexture(iconRect, TitleIcon);
+
+            Text.Font = GameFont.Medium;
+            Text.Anchor = TextAnchor.MiddleLeft;
+            Rect titleRect = new Rect(iconRect.xMax + 8f, headerRect.y, headerRect.width - iconSize - 8f, HEADER_HEIGHT);
+            Widgets.Label(titleRect, "CompatibilityEditor.Title".Translate());
+            Text.Anchor = TextAnchor.UpperLeft;
             Text.Font = GameFont.Small;
 
             float bodyY = headerRect.yMax + MARGIN;
@@ -377,38 +387,34 @@ namespace CompatibilityEditor
             Widgets.DrawMenuSection(rect);
             Rect inner = rect.ContractedBy(6f);
 
-            float y = inner.y;
             float w = inner.width;
-
             CompatibilityOverrideStore store = CompatibilityOverrideStore.Instance;
             bool dirty = HasStagedChanges;
 
+            const float BTN = BUTTON_HEIGHT;
+            const float STEP = BUTTON_HEIGHT + 6f;   // matches DrawColButton's advance
+
+            // ── Top: Reset All ──────────────────────────────
+            float topY = inner.y;
+            DrawColButton(inner.x, ref topY, w, "CompatibilityEditor.ResetAll".Translate(), store != null && store.Count > 0, PromptResetAll);
+
+            // ── Bottom: Close ───────────────────────────────
+            float bottomY = inner.yMax - BTN;
+            DrawColButton(inner.x, ref bottomY, w, "CompatibilityEditor.Close".Translate(), true, () => Close());
+
+            // ── Middle group ────────────
+            // Rows: Reset Pawn, Discard, Save, Save & Close
+            // Heights: 4 buttons (STEP each), minus the trailing 6f gap.
+            float groupH = STEP * 4 - 6f;
+            float y = inner.y + (inner.height - groupH) / 2f;
+
             DrawColButton(inner.x, ref y, w, "CompatibilityEditor.ResetPawn".Translate(), CanResetPawn(), StageResetPawn);
 
+            string saveLabel = "CompatibilityEditor.SaveChanges".Translate(dirty ? stagedEdits.Count : 0);
+
             DrawColButton(inner.x, ref y, w, "CompatibilityEditor.Discard".Translate(), dirty, DiscardStaged);
-
-            y += 8f;
-            Widgets.DrawLineHorizontal(inner.x, y, w);
-            y += 8f;
-
-            string saveLabel = dirty
-                ? "CompatibilityEditor.SaveChanges".Translate(stagedEdits.Count)
-                : "CompatibilityEditor.SaveChanges".Translate(0);
-
             DrawColButton(inner.x, ref y, w, saveLabel, dirty, CommitStaged);
-
             DrawColButton(inner.x, ref y, w, "CompatibilityEditor.SaveAndClose".Translate(), dirty, () => { CommitStaged(); base.Close(); });
-
-            y += 8f;
-            Widgets.DrawLineHorizontal(inner.x, y, w);
-            y += 8f;
-
-            DrawColButton(inner.x, ref y, w, "CompatibilityEditor.Close".Translate(), true, () => Close());
-
-            // Reset All sits apart from the save group — it is the only button whose
-            // blast radius is the entire save file.
-            float resetY = inner.yMax - BUTTON_HEIGHT;
-            DrawColButton(inner.x, ref resetY, w, "CompatibilityEditor.ResetAll".Translate(), store != null && store.Count > 0, PromptResetAll);
         }
 
         /// <summary>Draws one full-width button in the right-hand column and advances <paramref name="y"/> past it.</summary>
